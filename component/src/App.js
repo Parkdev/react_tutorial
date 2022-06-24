@@ -27,16 +27,18 @@
 //   return <MyComponent name="react" />;
 // };
 
-import MyComponent from "./MyComponent";
-import Counter from "./Counter";
-import Say from "./Say";
+// import MyComponent from "./MyComponent";
+// import Counter from "./Counter";
+// import Say from "./Say";
+import EventPractice from "./EventPractice";
 
 const App = () => {
   return (
     <>
-      <MyComponent favoriteNumber={1}>리액트</MyComponent>
-      <Counter />
-      <Say />
+      {/* <MyComponent favoriteNumber={1}>리액트</MyComponent> */}
+      {/* <Counter /> */}
+      {/* <Say /> */}
+      <EventPractice />
     </>
   );
 };
