@@ -30,17 +30,25 @@
 // import MyComponent from "./MyComponent";
 // import Counter from "./Counter";
 // import Say from "./Say";
-import EventPractice from "./EventPractice";
+// import EventPractice from "./EventPractice";
+import { Component } from "react"; //클래스형 컴포넌트 용
+import Validationsample from "./ValidationSample";
 
-const App = () => {
-  return (
-    <>
-      {/* <MyComponent favoriteNumber={1}>리액트</MyComponent> */}
-      {/* <Counter /> */}
-      {/* <Say /> */}
-      <EventPractice />
-    </>
-  );
-};
+// const App = () => {
+//   return (
+//     <>
+//       {/* <MyComponent favoriteNumber={1}>리액트</MyComponent> */}
+//       {/* <Counter /> */}
+//       {/* <Say /> */}
+//       <EventPractice />
+//     </>
+//   );
+// };
+
+class App extends Component {
+  render() {
+    return <Validationsample />;
+  }
+}
 
 export default App;
