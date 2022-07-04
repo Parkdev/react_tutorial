@@ -32,7 +32,8 @@
 // import Say from "./Say";
 // import EventPractice from "./EventPractice";
 import { Component } from "react"; //클래스형 컴포넌트 용
-import Validationsample from "./ValidationSample";
+import ScrollBox from "./ScrollBox";
+// import Validationsample from "./ValidationSample";
 
 // const App = () => {
 //   return (
@@ -45,9 +46,22 @@ import Validationsample from "./ValidationSample";
 //   );
 // };
 
+// class App extends Component {
+//   render() {
+//     return <Validationsample />;
+//   }
+// }
+
 class App extends Component {
   render() {
-    return <Validationsample />;
+    return (
+      <div>
+        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+        <button onClick={() => this.scrollBox.scrollToBottom()}>
+          맨 밑으로
+        </button>
+      </div>
+    );
   }
 }
 
