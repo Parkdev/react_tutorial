@@ -9,16 +9,40 @@ const IterationSample = () => {
     { id: 4, text: "바람" },
   ]);
   const [inputText, setInputText] = useState("");
-  const [nextId, setNextId] = useState(5);
+  const [nextId, setNextId] = useState(5); // 새로운 항목을 추가할때 사용할 기본 id
 
   //데이터 추가 기능
-  const onChange = e => setInputText(e.target.value);
+  const onChange = (e) => setInputText(e.target.value);
+  const onClick = () => {
+    const nextNames = names.concat({
+      id: nextId, // nextId 값을 id로 설정하고
+      text: inputText,
+    });
+    setNextId(nextId + 1); // nextId 값에 1을 더해 준다.
+    setNames(nextNames); // names 값 업데이트
+    setInputText(""); // inputtext를 비움
+  };
+  const onRemove = (id) => {
+    const nextNames = names.filter((name) => name.id !== id);
+    setNames(nextNames);
+  };
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
 
-  const nameList = names.map((name) => <li key={name.id}>{name.text}</li>);
+  const nameList = names.map((name) => (
+    <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+      {name.text}
+    </li>
+  ));
   return (
-    <input value={inputText} onChange={onChange} />
-    <button>추가</button>
-    <ul>{nameList}</ul>;
+    <>
+      <input value={inputText} onChange={onChange} onKeyPress={onKeyPress} />
+      <button onClick={onClick}>추가</button>
+      <ul>{nameList}</ul>
+    </>
   );
 };
 
