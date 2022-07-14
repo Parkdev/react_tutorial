@@ -7,6 +7,7 @@
 // export default App;
 
 import { useState } from "react";
+// import Counter from "./Counter";
 import Info from "./info";
 
 const App = () => {
